@@ -3,8 +3,7 @@ package dev.zihasz.clientbase.gui.clickgui;
 import dev.zihasz.clientbase.feature.module.Category;
 import dev.zihasz.clientbase.feature.module.modules.client.ClickGUIModule;
 import dev.zihasz.clientbase.manager.managers.ModuleManager;
-import dev.zihasz.clientbase.util.utils.MathUtils;
-import dev.zihasz.clientbase.util.utils.RenderUtils;
+import dev.zihasz.clientbase.util.utils.math.MathUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 

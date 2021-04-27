@@ -1,4 +1,4 @@
-package dev.zihasz.clientbase.util.utils;
+package dev.zihasz.clientbase.util.utils.render;
 
 import dev.zihasz.clientbase.util.Util;
 import net.minecraft.client.Minecraft;

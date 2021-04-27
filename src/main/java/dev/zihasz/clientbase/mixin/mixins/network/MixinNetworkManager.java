@@ -1,6 +1,5 @@
 package dev.zihasz.clientbase.mixin.mixins.network;
 
-import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.event.EventEra;
 import dev.zihasz.clientbase.event.events.PacketEvent;
 import io.netty.channel.ChannelHandlerContext;

@@ -5,7 +5,6 @@ import dev.zihasz.clientbase.feature.module.Module;
 import dev.zihasz.clientbase.setting.Setting;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import scala.collection.immutable.Set;
 
 import java.util.Random;
 

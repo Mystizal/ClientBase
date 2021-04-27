@@ -1,8 +1,8 @@
 package dev.zihasz.clientbase;
 
+import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
 import club.minnced.discord.rpc.DiscordRichPresence;
-import club.minnced.discord.rpc.DiscordEventHandlers;
 
 public class DiscordPresence {
 
@@ -18,7 +18,6 @@ public class DiscordPresence {
 	public static void start() {
 		DiscordEventHandlers eventHandlers = new DiscordEventHandlers();
 		eventHandlers.disconnected = ((var1, var2) -> System.out.println("Discord RPC disconnected, var1: " + var1 + ", var2: " + var2));
-
 		rpc.Discord_Initialize(APP_ID, eventHandlers, true, STEAM_ID);
 
 		presence.largeImageKey = "large";

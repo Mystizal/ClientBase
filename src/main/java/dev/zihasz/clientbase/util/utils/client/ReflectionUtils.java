@@ -1,4 +1,4 @@
-package dev.zihasz.clientbase.util.utils;
+package dev.zihasz.clientbase.util.utils.client;
 
 import dev.zihasz.clientbase.util.Util;
 import org.reflections.Reflections;

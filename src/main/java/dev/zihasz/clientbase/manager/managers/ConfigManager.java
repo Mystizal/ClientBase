@@ -8,14 +8,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import scala.util.parsing.json.JSON;
 
-import java.io.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ConfigManager extends Manager {
 
@@ -73,10 +72,11 @@ public class ConfigManager extends Manager {
 			moduleObj.put("enabled", module.isEnabled());
 			moduleObj.put("visible", module.isVisible());
 
-			for (Setting setting : module.getSettings()) {
+			for (Setting<?> setting : module.getSettings()) {
 				JSONObject settingObj = new JSONObject();
+				Object value = !(setting.getValue() instanceof Number) ? setting.getValue().toString() : setting.getValue();
 				settingObj.put("name", setting.getName());
-				settingObj.put("value", setting.getValue());
+				settingObj.put("value", value);
 				settingsArr.add(settingObj);
 			}
 

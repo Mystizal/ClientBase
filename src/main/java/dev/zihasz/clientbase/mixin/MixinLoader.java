@@ -16,13 +16,9 @@ public class MixinLoader implements IFMLLoadingPlugin {
     private static boolean isObfuscatedEnvironment = false;
 
     public MixinLoader() {
-        ClientBase.LOGGER.info("Mixins initialized");
-
         MixinBootstrap.init();
         Mixins.addConfiguration("mixins.clientbase.json");
         MixinEnvironment.getDefaultEnvironment().setObfuscationContext("searge");
-
-        ClientBase.LOGGER.info(MixinEnvironment.getDefaultEnvironment().getObfuscationContext());
     }
 
     @Override

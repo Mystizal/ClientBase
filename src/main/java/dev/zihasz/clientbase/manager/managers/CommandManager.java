@@ -1,18 +1,15 @@
 package dev.zihasz.clientbase.manager.managers;
 
+import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.feature.command.Command;
 import dev.zihasz.clientbase.feature.module.Module;
 import dev.zihasz.clientbase.manager.Manager;
-import dev.zihasz.clientbase.setting.Setting;
-import dev.zihasz.clientbase.util.utils.ReflectionUtils;
+import dev.zihasz.clientbase.util.utils.client.ReflectionUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import org.reflections.Reflections;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +26,7 @@ public class CommandManager extends Manager {
 		commandClasses.forEach(commandClass -> {
 			try {
 				commands.add((Command) commandClass.newInstance());
+				ClientBase.LOGGER.info("Loaded command: " + commandClass.getName());
 			}
 			catch (Exception e) { e.printStackTrace(); }
 		});

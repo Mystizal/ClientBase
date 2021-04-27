@@ -1,6 +1,5 @@
 package dev.zihasz.clientbase.event;
 
-import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.feature.module.Module;
 import dev.zihasz.clientbase.manager.managers.ModuleManager;
 import net.minecraftforge.client.event.RenderWorldLastEvent;

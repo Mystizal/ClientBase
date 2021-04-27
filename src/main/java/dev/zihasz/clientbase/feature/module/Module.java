@@ -1,12 +1,10 @@
 package dev.zihasz.clientbase.feature.module;
 
-import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.feature.Feature;
 import dev.zihasz.clientbase.feature.traits.IBindable;
 import dev.zihasz.clientbase.feature.traits.IToggleable;
 import dev.zihasz.clientbase.feature.traits.IVisible;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
-import net.minecraftforge.common.MinecraftForge;
 import org.lwjgl.input.Keyboard;
 
 public abstract class Module extends Feature implements IBindable, IToggleable, IVisible {

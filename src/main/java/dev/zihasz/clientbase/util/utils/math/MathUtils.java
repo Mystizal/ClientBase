@@ -1,4 +1,4 @@
-package dev.zihasz.clientbase.util.utils;
+package dev.zihasz.clientbase.util.utils.math;
 
 public class MathUtils {
 

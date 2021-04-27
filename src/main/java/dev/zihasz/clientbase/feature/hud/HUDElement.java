@@ -3,8 +3,6 @@ package dev.zihasz.clientbase.feature.hud;
 import dev.zihasz.clientbase.feature.Feature;
 import dev.zihasz.clientbase.feature.traits.IToggleable;
 
-import java.awt.*;
-
 public abstract class HUDElement extends Feature implements IToggleable {
 
 	public boolean enabled;

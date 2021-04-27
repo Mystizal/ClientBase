@@ -5,12 +5,10 @@ import dev.zihasz.clientbase.manager.managers.CommandManager;
 import dev.zihasz.clientbase.manager.managers.ConfigManager;
 import dev.zihasz.clientbase.manager.managers.ModuleManager;
 import dev.zihasz.clientbase.mixin.MixinLoader;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -38,6 +36,7 @@ public class ClientBase {
 
     // Managers
     public static CommandManager commandManager;
+    public static ConfigManager configManager;
     public static ModuleManager moduleManager;
 
     /**
@@ -64,14 +63,17 @@ public class ClientBase {
         moduleManager = new ModuleManager();
         LOGGER.info("Initialized ModuleManager!");
 
+        configManager = new ConfigManager();
+        LOGGER.info("Initialized ConfigManager!");
+
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             ConfigManager.save();
-            LOGGER.info("Shutdown hook registered for config saving.");
+            LOGGER.info("Config saved!");
         }));
+        LOGGER.info("Shutdown hook registered for config saving.");
 
         ConfigManager.load();
         LOGGER.info("Config loaded!");
-
 
     }
 

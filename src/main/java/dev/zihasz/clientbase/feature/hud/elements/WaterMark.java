@@ -2,7 +2,6 @@ package dev.zihasz.clientbase.feature.hud.elements;
 
 import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.feature.hud.HUDElement;
-import net.minecraft.client.gui.Gui;
 
 import java.awt.*;
 

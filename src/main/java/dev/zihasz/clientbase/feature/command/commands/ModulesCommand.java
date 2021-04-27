@@ -13,6 +13,7 @@ public class ModulesCommand extends Command {
 
 	@Override
 	public void run(String[] args) {
+		mc.player.sendMessage(new TextComponentString("Loaded modules: "));
 		for (Module module : ModuleManager.getModules()) {
 			mc.player.sendMessage(new TextComponentString(module.getName()));
 		}

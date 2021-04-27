@@ -1,19 +1,17 @@
 package dev.zihasz.clientbase.manager.managers;
 
+import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.feature.module.Category;
 import dev.zihasz.clientbase.feature.module.Module;
 import dev.zihasz.clientbase.manager.Manager;
 import dev.zihasz.clientbase.setting.Setting;
+import dev.zihasz.clientbase.util.utils.client.ReflectionUtils;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import dev.zihasz.clientbase.util.utils.ReflectionUtils;
-import org.reflections.Reflections;
 
 public class ModuleManager extends Manager {
 
@@ -24,6 +22,7 @@ public class ModuleManager extends Manager {
 		moduleClasses.forEach(moduleClass -> {
 			try {
 				addMod((Module) moduleClass.newInstance());
+				ClientBase.LOGGER.info("Loaded module: " + moduleClass.getName());
 			}
 			catch (Exception e) { e.printStackTrace(); }
 		});
